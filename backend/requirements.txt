@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+sqlalchemy
+psycopg2-binary
+python-dotenv
+pymupdf
+langchain
+langchain-community
+openai
+requests
+# For HuggingFaceEmbeddings in LangChain
+sentence-transformers
+# For CORS
+starlette
