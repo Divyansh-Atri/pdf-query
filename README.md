@@ -15,6 +15,28 @@ A modern web application for uploading PDF documents and asking questions about 
 - **AI/NLP:** LangChain, OpenAI, HuggingFace Embeddings, ChromaDB
 - **PDF Processing:** PyMuPDF (pymupdf)
 
+## Architecture Overview
+
+The application is split into two main parts:
+
+- **Frontend (React):**
+  - Provides a modern, responsive user interface for uploading PDFs, viewing documents, and chatting with the AI.
+  - Communicates with the backend via HTTP API calls (using Axios).
+  - Handles chat history display, document management, and user interactions.
+
+- **Backend (FastAPI):**
+  - Exposes REST API endpoints for document upload, question answering, chat history, and document management.
+  - Processes uploaded PDFs using PyMuPDF to extract text and metadata.
+  - Uses LangChain to split, embed, and store document text in a vector database (ChromaDB), enabling semantic search and question answering.
+  - Integrates with OpenAI and HuggingFace models for natural language understanding and response generation.
+  - Stores document metadata and chat history in a PostgreSQL database.
+
+**Interaction Flow:**
+1. User uploads a PDF via the frontend; the file is sent to the backend for processing and storage.
+2. User selects a document and asks questions; the frontend sends these to the backend.
+3. The backend uses AI/NLP to answer questions based on the document's content and returns the answer to the frontend.
+4. All chat history and document data are persisted in the backend for future retrieval and management.
+
 ## Setup Instructions
 
 ### 1. Clone the Repository
