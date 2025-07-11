@@ -41,7 +41,15 @@ cd backend
 pip install -r requirements.txt
 ```
 
-#### c. Start the backend server
+#### c. Create .env in backend
+```env
+DATABASE_URL="postgreSQL URL'
+OPENAI_API_KEY=
+UPLOAD_DIR=
+MAX_FILE_SIZE=(in bytes)
+```
+
+#### d. Start the backend server
 ```bash
 uvicorn app.main:app --reload
 ```
